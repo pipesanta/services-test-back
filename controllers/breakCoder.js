@@ -11,10 +11,19 @@ class GameController {
 
     static testController(req, res) {
 
-        const testResponse = { date: Date.now(), name: 'testig funciton' };
+        const { numberA, numberB } = req.query;
+
+        console.log({
+            numberA, numberB
+        });
+
+        const result = calculateCodeBreaker(numberA, numberB);
+
+        const testResponse = { date: Date.now(), name: 'testig funciton', result };
+
 
         res.status(200)
-            .json(testResponse)
+            .json({ result: testResponse })
     }
 
 
