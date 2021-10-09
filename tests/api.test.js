@@ -41,7 +41,7 @@ describe('teting root path', () => {
             .get('/calculator/substract?a=0&b=4')
             .then(response => {
                 expect(response.statusCode).toBe(200);
-                expect(response.body.result).toBe(-4);
+                expect(response.body.result).toBe(4);
                 done();
             })
     });
